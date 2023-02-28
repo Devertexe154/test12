@@ -1,0 +1,60 @@
+<div class="px-0 container-fluid">
+  <header class="row">
+    <section class="row  gora  fixed-top">
+      <section (click)="home()" class="kafelek col-md-1 offset-md-4" [ngClass]="{'selected': section === 'hom'}">Home
+      </section>
+      <section (click)="aom()" class="kafelek col-md-1" [ngClass]="{'selected': section === 'ao'}">AOM</section>
+      <section (click)="mineguns()" class="kafelek col-md-1" [ngClass]="{'selected': section === 'minegun'}">Mineguns
+      </section>
+      <section (click)="about()" class="kafelek col-md-1" [ngClass]="{'selected': section === 'abou'}">About</section>
+    </section>
+  </header>
+
+  <div id="kontener">
+
+    <ng-container *ngIf="section === 'hom'; then homTpl"></ng-container>
+    <ng-container *ngIf="section === 'ao'; then aoTpl"></ng-container>
+    <ng-container *ngIf="section === 'minegun'; then minegunTpl"></ng-container>
+    <ng-container *ngIf="section === 'abou'; then abouTpl"></ng-container>
+
+    <ng-template #homTpl>
+      <ng-container *ngTemplateOutlet="hom"></ng-container>
+    </ng-template>
+
+    <ng-template #aoTpl>
+      <ng-container *ngTemplateOutlet="ao"></ng-container>
+    </ng-template>
+
+    <ng-template #minegunTpl>
+      <ng-container *ngTemplateOutlet="minegun"></ng-container>
+    </ng-template>
+
+    <ng-template #abouTpl>
+      <ng-container *ngTemplateOutlet="abou"></ng-container>
+    </ng-template>
+
+
+
+    <ng-template #hom>
+      <app-home></app-home>
+    </ng-template>
+
+    <ng-template #abou>
+      <app-about></app-about>
+    </ng-template>
+
+    <ng-template #ao>
+      <app-aom></app-aom>
+    </ng-template>
+
+    <ng-template #minegun>
+      <app-mineguns></app-mineguns>
+    </ng-template>
+
+
+
+
+  </div>
+
+
+</div>

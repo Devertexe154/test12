@@ -1,0 +1,42 @@
+.gallery-container {
+  position: relative;
+  margin: auto;
+  width: 80%;
+  max-width: 800px;
+}
+
+.gallery-slides img {
+  display: none;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.gallery-slides img.active {
+  display: block;
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  font-size: 2em;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 0 3px 3px 0;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 190px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
